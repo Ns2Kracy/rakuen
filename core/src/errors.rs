@@ -29,6 +29,9 @@ pub enum ApiError {
     BadGateway(String),
     #[error("{0}")]
     ServiceUnavailable(String),
+
+    #[error("{0}")]
+    ValidationError(#[from] validator::ValidationErrors),
 }
 
 impl IntoResponse for ErrorKind {
@@ -50,6 +53,7 @@ impl IntoResponse for ApiError {
             ApiError::NotImplemented(e) => (StatusCode::NOT_IMPLEMENTED, e),
             ApiError::BadGateway(e) => (StatusCode::BAD_GATEWAY, e),
             ApiError::ServiceUnavailable(e) => (StatusCode::SERVICE_UNAVAILABLE, e),
+            ApiError::ValidationError(e) => (StatusCode::BAD_REQUEST, e.to_string()),
         }
         .into_response()
     }
