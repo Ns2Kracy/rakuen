@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = ["core", "apps/desktop/src-tauri"]
+
+[workspace.package]
+edition = "2021"
+readme = "README.md"
+authors = ["Ns2Kracy <ns2kracy@gmail.com>"]
+homepage = "https://github.com/Ns2Kracy/rakuen"
+repository = "https://github.com/Ns2Kracy/rakuen"
+
+[workspace.dependencies]
+serde = { version = "1.0.193", features = ["derive"] }
+serde_json = { version = "1.0.108" }

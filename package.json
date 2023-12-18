@@ -1,0 +1,19 @@
+{
+  "name": "rakuen",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint -- --fix",
+    "dev:web": "turbo run dev --filter @rakuen/web",
+    "dev:desktop": "pnpm run --filter @rakuen/desktop tauri dev",
+    "biome:format": "biome format --write .",
+    "biome:lint": "biome check --apply-unsafe ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1",
+    "turbo": "^1.11.1"
+  },
+  "packageManager": "pnpm@8.11.0"
+}

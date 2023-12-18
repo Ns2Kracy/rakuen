@@ -1,0 +1,12 @@
+{
+  "extends": ["../../biome.json"],
+  "linter": {
+    "ignore": ["./dist/*", "./.turbo/*", "./node_modules/*"]
+  },
+  "formatter": {
+    "ignore": ["./dist/*", "./.turbo/*", "./node_modules/*"]
+  },
+  "files": {
+    "ignore": ["./dist/*", "./.turbo/*", "./node_modules/*"]
+  }
+}

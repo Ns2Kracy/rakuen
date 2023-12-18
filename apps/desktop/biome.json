@@ -1,0 +1,12 @@
+{
+  "extends": ["../../biome.json"],
+  "linter": {
+    "ignore": ["./dist/*", "./.turbo/*", "./node_modules/*", "./.vscode/*", "./src-tauri/*"]
+  },
+  "formatter": {
+    "ignore": ["./dist/*", "./.turbo/*", "./node_modules/*", "./.vscode/*", "./src-tauri/*"]
+  },
+  "files": {
+    "ignore": ["./dist/*", "./.turbo/*", "./node_modules/*", "./.vscode/*", "./src-tauri/*"]
+  }
+}

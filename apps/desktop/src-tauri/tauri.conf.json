@@ -1,0 +1,51 @@
+{
+	"build": {
+		"beforeDevCommand": "pnpm start",
+		"beforeBuildCommand": "pnpm build",
+		"devPath": "http://localhost:7592",
+		"distDir": "../dist"
+	},
+	"package": {
+		"productName": "Rakuen"
+	},
+	"tauri": {
+		"bundle": {
+			"active": true,
+			"targets": "all",
+			"identifier": "com.tauri.dev",
+			"icon": [
+				"icons/16x16.png",
+				"icons/20x20.png",
+				"icons/24x24.png",
+				"icons/32x32.png",
+				"icons/48x48.png",
+				"icons/64x64.png",
+				"icons/128x128.png",
+				"icons/256x256.png",
+				"icons/512x512.png",
+				"icons/1024x1024.png",
+				"icons/2048x2048.png",
+				"icons/4096x4096.png",
+				"icons/icon.icns",
+				"icons/icon.ico"
+			]
+		},
+		"security": {
+			"csp": null
+		},
+		"windows": [
+			{
+				"fullscreen": false,
+				"resizable": true,
+				"title": "Rakuen",
+				"width": 800,
+				"height": 600
+			}
+		]
+	},
+	"plugins": {
+		"shell": {
+			"open": true
+		}
+	}
+}

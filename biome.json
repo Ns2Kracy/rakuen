@@ -1,0 +1,81 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off"
+      },
+      "a11y": {
+        "useValidAnchor": "off"
+      }
+    },
+    "ignore": [
+      "./packages/styled-system/*",
+      "./crates/*",
+      "./core/*",
+      "./apps/desktop/src-tauri/*",
+      "./node_modules/*",
+      "./target/*"
+    ]
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2
+    },
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": true
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "ignore": [
+      "./packages/styled-system/*",
+      "./crates/*",
+      "./core/*",
+      "./apps/desktop/src-tauri/*",
+      "./node_modules/*",
+      "./target/*"
+    ]
+  },
+  "files": {
+    "ignore": [
+      "./packages/styled-system/*",
+      "./crates/*",
+      "./core/*",
+      "./apps/desktop/src-tauri/*",
+      "./node_modules/*",
+      "./target/*"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "tab",
+      "indentWidth": 2,
+      "jsxQuoteStyle": "double",
+      "quoteStyle": "double",
+      "trailingComma": "all",
+      "quoteProperties": "asNeeded",
+      "lineWidth": 100
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "root": ".",
+    "clientKind": "git",
+    "useIgnoreFile": true
+  }
+}
