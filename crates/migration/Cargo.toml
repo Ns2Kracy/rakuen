@@ -1,0 +1,20 @@
+[package]
+name = "rakuen-migration"
+version = "0.1.0"
+edition.workspace = true
+readme.workspace = true
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+name = "migration"
+path = "src/lib.rs"
+
+[dependencies]
+tokio = { workspace = true }
+
+[dependencies.sea-orm-migration]
+version = "0.12.10"
+features = ["sqlx-sqlite", "runtime-tokio-native-tls"]
