@@ -25,6 +25,8 @@ sea-orm = { workspace = true, features = [
 # async runtime
 tokio = { workspace = true }
 
+rakuen-enity = { path = "../crates/enity" }
+
 # error handling
 anyhow = "1.0.75"
 thiserror = "1.0.50"
