@@ -32,6 +32,13 @@ pub enum ApiError {
 
     #[error("{0}")]
     ValidationError(#[from] validator::ValidationErrors),
+
+    #[error("{0}")]
+    DbError(#[from] sea_orm::DbErr),
+    #[error("{0}")]
+    DbSqlError(#[from] sea_orm::SqlErr),
+    #[error("{0}")]
+    DbRutimeError(#[from] sea_orm::RuntimeErr),
 }
 
 impl IntoResponse for ErrorKind {
@@ -54,6 +61,9 @@ impl IntoResponse for ApiError {
             ApiError::BadGateway(e) => (StatusCode::BAD_GATEWAY, e),
             ApiError::ServiceUnavailable(e) => (StatusCode::SERVICE_UNAVAILABLE, e),
             ApiError::ValidationError(e) => (StatusCode::BAD_REQUEST, e.to_string()),
+            ApiError::DbError(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()),
+            ApiError::DbSqlError(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()),
+            ApiError::DbRutimeError(e) => (StatusCode::INTERNAL_SERVER_ERROR, e.to_string()),
         }
         .into_response()
     }

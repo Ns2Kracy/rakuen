@@ -6,12 +6,12 @@ use serde::{Deserialize, Serialize};
 pub struct Model {
     #[sea_orm(primary_key)]
     #[serde(skip_deserializing)]
-    pub id: i32,
+    pub id: String,
     pub username: String,
     pub password: String,
-    pub email: String,
-    pub created_at: DateTime,
-    pub updated_at: DateTime,
+    pub salt: String,
+    pub created_at: chrono::DateTime<chrono::Local>,
+    pub updated_at: chrono::DateTime<chrono::Local>,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]

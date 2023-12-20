@@ -11,63 +11,33 @@ default-run = "rakuen-core"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-# serialization and deserialization
 serde = { workspace = true }
 serde_json = { workspace = true }
-
-# orm
 sea-orm = { workspace = true, features = [
     "sqlx-sqlite",
     "runtime-tokio-native-tls",
     "macros",
 ] }
-
-# async runtime
 tokio = { workspace = true }
-
+chrono = { workspace = true }
 rakuen-enity = { path = "../crates/enity" }
-
-# error handling
+rakuen-migration = { path = "../crates/migration" }
 anyhow = "1.0.75"
 thiserror = "1.0.50"
-
-# time
-chrono = "0.4.31"
-
-# lazy static
 once_cell = "1.18.0"
-
-# validation
 validator = { version = "0.16.1", features = ["derive"] }
-
-# encryption
 bcrypt = "0.15.0"
-
-# jwt
 jsonwebtoken = "9.1.0"
-
-# tracing and logging
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["chrono"] }
 tracing-appender = "0.2.3"
-
-
-# web framework
 axum = { version = "0.7.1", features = ["tracing", "ws"] }
 axum-extra = { version = "0.9.0", features = ["cookie", "typed-header"] }
 hyper = { version = "1.0.1", features = ["full"] }
 tower = { version = "0.4.13", features = ["full"] }
 tower-http = { version = "0.5.0", features = ["full"] }
-
-# uuid
 uuid = { version = "1.6.1", features = ["v4"] }
-
-# dotenv
 dotenv = "0.15.0"
-
-# random
 rand = "0.8.5"
-
-# enum utils
-strum = { version = "0.25.0", features = ["derive"] }
-strum_macros = "0.25.3"
+ring = "0.17.7"
+data-encoding = "2.5.0"

@@ -19,3 +19,6 @@ serde_json = { version = "1.0.108" }
 
 # orm
 sea-orm = { version = "0.12.10" }
+
+# time
+chrono = "0.4.31"
